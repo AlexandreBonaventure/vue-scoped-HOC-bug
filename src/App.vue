@@ -1,22 +1,23 @@
 <template>
-  <ComponentWithAttrs class="hello" />
-  <ComponentWithoutAttrs class="hello" />
+  <ComponentWithTeleport class="hello" />
+  <ComponentRegular class="hello" />
 </template>
 
 <script>
-import ComponentWithAttrs from './components/ComponentWithAttrs.vue'
-import ComponentWithoutAttrs from './components/ComponentWithoutAttrs.vue'
+import ComponentWithTeleport from './components/ComponentWithTeleport.vue'
+import ComponentRegular from './components/ComponentRegular.vue'
+import { getCurrentInstance } from 'vue';
 
 export default {
   name: 'App',
   components: {
-    ComponentWithAttrs,
-ComponentWithoutAttrs
-  }
+    ComponentWithTeleport,
+    ComponentRegular,
+  },
 }
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .hello {
   color: red;
 }
